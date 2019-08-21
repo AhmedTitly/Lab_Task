@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Faculty;
-use App\Login;
+use App\User;
+use App\Blog;
 
 //use App\Http\Requests\RegistrationRequest;
 
@@ -18,31 +18,28 @@ class RegistrationController extends Controller
 
         $validatedData = $request->validate([
 
-            'facultyemail' => 'required|email|unique:faculties',
-            'facultyname' => 'required|string|max:50',
-            'facultypass' => 'required',
-            'facultyphn'=>'required'
+            'name' => 'required|string|max:50',
+            'phone'=>'required',
+            'username' => 'required|string|max:40',
+            'password' => 'required'
+            // 'type' => 'required'
+            
+
         ]);
 
        
+        $user = new user();
 
-    	$facul = new Faculty ();
-
-    	$facul->facultyname = $request->facultyname;
-        $facul->facultyemail = $request->facultyemail;
-        $facul->facultyphn = $request->facultyphn;
-        $facul->facultypass = $request->facultypass;
-        $facul->facultytype = '5';
-
-        $log = new Login();
-
-        $log->email = $request->facultyemail;
-        $log->password = $request->facultypass;
-        $log->typeid = '5';
+        $user->name = $request->name;
+        // $user->comName = $request->comName;
+        $user->phone = $request->phone;
+        $user->username = $request->username;
+        $user->password = $request->password;
+        $user->type = 'user';
 
         
-    	if ($facul->save()) {
-            $log->save();
+    	if ($user->save()) {
+            
     		$request->session()->flash('message', 'Successfully Registered. Now you can login');
     		return redirect()->route('login.index');
     	}

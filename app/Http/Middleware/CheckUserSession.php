@@ -9,7 +9,7 @@ class CheckUserSession
 
     public function handle($request, Closure $next)
     {
-        if (!$request->session()->exists('faculid')) {
+        if (!$request->session()->exists('id')) {
             // user value cannot be found in session
             return redirect('/login');
         }

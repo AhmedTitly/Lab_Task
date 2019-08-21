@@ -21,7 +21,7 @@
 	
 	<h1>Faculty info </h1>
 
-	<a href="{{route('faculty.userList')}}"class="btn btn-secondary btn-bg" role="button">Back</a> 
+	<a href="{{route('admin.userList')}}"class="btn btn-secondary btn-bg" role="button">Back</a> 
 	<a href="{{route('logout.index')}}"class="btn btn-warning btn-bg" role="button"> Logout</a>
 	<br>
     </br>
@@ -32,9 +32,10 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Faculty Name</th>
-					<th>Email</th>
+					<th> Name</th>
+					
 					<th>Contact Number</th>
+					<th>Type</th>
 				</tr>
 			</thead>
 			<tbody>

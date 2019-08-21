@@ -18,8 +18,8 @@
 			@csrf
 			<table>
 					<tr>
-						<td>Email :</td>
-						<td><input type="text" name="email" value="" placeholder="type email here"></td>
+						<td>Username :</td>
+						<td><input type="text" name="username" value="" placeholder="type username here"></td>
 					</tr>
 					<tr>
 						<td>Password :</td>

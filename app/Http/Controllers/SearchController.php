@@ -19,16 +19,16 @@ class SearchController extends Controller
 
 			$output="";
 
-			$users=DB::table('faculties')->where('facultyname','LIKE','%'.$request->search."%")->get();
+			$users=DB::table('users')->where('name','LIKE','%'.$request->search."%")->get();
 
 			if($users){
 
 				foreach ($users as $key => $u) {
 					$output.='<tr>'.
 
-					'<td>'.$u->facultyname.'</td>'.
-					'<td>'.$u->facultyemail.'</td>'.
-					'<td>'.$u->facultyphn.'</td>'.
+					'<td>'.$u->name.'</td>'.
+					'<td>'.$u->phone.'</td>'.
+					'<td>'.$u->type.'</td>'.
 					'</tr>';
 				}
 				return Response($output);
