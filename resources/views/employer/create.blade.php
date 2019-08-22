@@ -10,7 +10,7 @@
 	<center>
 	<h1>Add a new place</h1>
 
-	<a href="{{route('employee.index')}}" class="btn btn-secondary btn-bg">Back</a>
+	<a href="{{route('employer.index')}}" class="btn btn-secondary btn-bg">Back</a>
 	<br>
 </br>
 

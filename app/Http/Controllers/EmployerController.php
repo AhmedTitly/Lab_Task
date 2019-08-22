@@ -31,15 +31,15 @@ class EmployerController extends Controller
             'location' => 'required',
             'cost'=>'required',
             'medium' => 'required',
-            'writing' => 'required',
-             'username' => 'required'
+            'writing' => 'required'
+            // 'username' => 'required'
             
 
         ]);
 
        
 
-        $user = new blog();
+        $blog = new Blog();
 
         $blog->location = $request->location;
         $blog->cost = $request->cost;
